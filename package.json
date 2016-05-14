@@ -1,0 +1,32 @@
+{
+  "name": "scenarioscript",
+  "version": "0.1.0",
+  "description": "Script language suitable for storing scenario data.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "tape test/test.js",
+    "cov": "nyc --reporter=lcov npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kt3k/scenarioscript.git"
+  },
+  "keywords": [
+    "scenario",
+    "dsl",
+    "script",
+    "language",
+    "screenplay",
+    "skit"
+  ],
+  "author": "Yoshiya Hinosawa <stibium121@gmail.com> (https://twitter.com/kt3k)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kt3k/scenarioscript/issues"
+  },
+  "homepage": "https://github.com/kt3k/scenarioscript#readme",
+  "devDependencies": {
+    "nyc": "^6.4.4",
+    "tape": "^4.5.1"
+  }
+}
