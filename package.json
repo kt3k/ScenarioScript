@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "tape test/test.js",
-    "cov": "nyc --reporter=lcov npm test"
+    "cov": "nyc --reporter=lcov npm test",
+    "codecov": "npm run cov && codecov"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/kt3k/scenarioscript#readme",
   "devDependencies": {
+    "codecov": "^1.0.1",
     "nyc": "^6.4.4",
     "tape": "^4.5.1"
   }
