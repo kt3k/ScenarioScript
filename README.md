@@ -1,4 +1,4 @@
-# ScenarioScript v1.0.0
+# ScenarioScript v1.0.1
 
 > Script language suitable for storing scenario data.
 
