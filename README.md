@@ -4,7 +4,7 @@
 
 # Example
 
-```
+```html
 [Wife]     Have you got anything without spam?
 [Waitress] Well, there's spam egg sausage and spam, that's not got much spam in it.
 [Wife]     I don't want ANY spam!
@@ -17,7 +17,45 @@
 This is parsed to the following:
 
 ```json
-TODO: fill
+[{
+  "type": "message",
+  "role": "Wife",
+  "message": "Have you got anything without spam?",
+  "params": {}
+}, {
+  "type": "message",
+  "role": "Waitress",
+  "message": "Well, there's spam egg sausage and spam, that's not got much spam in it.",
+  "params": {}
+}, {
+  "type": "message",
+  "role": "Wife",
+  "message": "I don't want ANY spam!",
+  "params": {}
+}, {
+  "type": "message",
+  "role": "Man",
+  "message": "Why can't she have egg bacon spam and sausage?",
+  "params": {}
+}, {
+  "type": "message",
+  "role": "Wife",
+  "message": "THAT'S got spam in it!",
+  "params": {}
+}, {
+  "type": "message",
+  "role": "Man",
+  "message": "Hasn't got as much spam in it as spam egg sausage and spam, has it?",
+  "params": {}
+}, {
+  "type": "message",
+  "role": "Vikings",
+  "message": "Spam spam spam spam...",
+  "params": {
+    "singing": true,
+    "repeat": 10
+  }
+}]
 ```
 
 # Rules
@@ -33,7 +71,7 @@ TODO: fill
 
 Example:
 
-```
+```html
 [Vikings]  Spam spam spam spam... (singing, repeat=10)
 ```
 
@@ -48,11 +86,11 @@ The last part `(singing, repeat=10)` is the parameters of the line. In this case
 }
 ```
 
-The parameters are the comma-separated sequence of `key=value`. The `value` part is optional and if it's omitted, it means `true`. If the value *looks like* a number, then it's considered as a number. If the value *looks like* a boolean, then it's considered as a boolean. Otherwise it's a string.
+The parameters are the comma-separated sequence of `key=value`. The `=value` part is optional and if it's omitted, it means `true`. If the value *looks like* a number, then it's considered as a number. If the value *looks like* a boolean, then it's considered as a boolean. Otherwise it's a string.
 
 Role can be omitted. Example:
 
-```
+```html
 There was a light at first
 ```
 
@@ -60,11 +98,11 @@ In this case, the role of the line is `null` and the whole line is `message` of 
 
 ## Separator
 
-A separator lines only has '-' in it.
+A separator line only has '-' in it.
 
 Example:
 
-```js
+```html
 [ Jonathan ] How many have you killed?
 [ Dio ] Do you remember how many breads you've eaten in your life?
 ---
@@ -98,7 +136,49 @@ parser.parse(`
 [Man]      Hasn't got as much spam in it as spam egg sausage and spam, has it?
 [Vikings]  Spam spam spam spam... (singing, repeat=10)
 ---
-`)
+`) /* =>
+
+[{
+  "type": "message",
+  "role": "Wife",
+  "message": "Have you got anything without spam?",
+  "params": {}
+}, {
+  "type": "message",
+  "role": "Waitress",
+  "message": "Well, there's spam egg sausage and spam, that's not got much spam in it.",
+  "params": {}
+}, {
+  "type": "message",
+  "role": "Wife",
+  "message": "I don't want ANY spam!",
+  "params": {}
+}, {
+  "type": "message",
+  "role": "Man",
+  "message": "Why can't she have egg bacon spam and sausage?",
+  "params": {}
+}, {
+  "type": "message",
+  "role": "Wife",
+  "message": "THAT'S got spam in it!",
+  "params": {}
+}, {
+  "type": "message",
+  "role": "Man",
+  "message": "Hasn't got as much spam in it as spam egg sausage and spam, has it?",
+  "params": {}
+}, {
+  "type": "message",
+  "role": "Vikings",
+  "message": "Spam spam spam spam...",
+  "params": {
+    "singing": true,
+    "repeat": 10
+  }
+}]
+
+*/
 ```
 
 ## API
