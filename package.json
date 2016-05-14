@@ -1,6 +1,6 @@
 {
   "name": "scenarioscript",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Script language suitable for storing scenario data.",
   "main": "src/index.js",
   "scripts": {
