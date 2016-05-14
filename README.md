@@ -1,4 +1,5 @@
-# ScenarioScript v1.0.1
+# ScenarioScript v1.0.1 [![CircleCI](https://circleci.com/gh/kt3k/ScenarioScript.svg?style=svg)](https://circleci.com/gh/kt3k/ScenarioScript) [![codecov](https://codecov.io/gh/kt3k/ScenarioScript/branch/master/graph/badge.svg)](https://codecov.io/gh/kt3k/ScenarioScript)
+
 
 > Script language suitable for storing scenario data.
 
